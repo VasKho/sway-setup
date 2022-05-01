@@ -1,5 +1,5 @@
 # Theme
-set $theme $HOME/.config/sway/themes/nord
+set $theme $HOME/.config/sway/themes/tokyonight
 include $theme/colors.conf
 
 # Variables

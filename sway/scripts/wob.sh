@@ -16,7 +16,6 @@ is_running_on_this_screen() {
 
 new_value=$3 # null or a percent; no checking!
 
-
 wob_pipe=~/.cache/$( basename $SWAYSOCK ).wob
 
 [[ -p $wob_pipe ]] || mkfifo $wob_pipe
