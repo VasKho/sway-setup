@@ -1,0 +1,21 @@
+# Theme
+set $theme $HOME/.config/sway/themes/tokyodark
+include $theme/colors.conf
+
+# Variables
+include $HOME/.config/sway/definitions.d/*.conf
+
+# I/O devices
+include $HOME/.config/sway/inputs/*
+include $HOME/.config/sway/outputs/*
+
+# Enable modes
+include $HOME/.config/sway/modes/*
+
+# Only enable this if every app you use is compatible with wayland
+# xwayland disable
+
+# User config
+include $HOME/.config/sway/config.d/*.conf
+
+exec $statusbar
