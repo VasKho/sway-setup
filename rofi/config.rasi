@@ -1,5 +1,5 @@
 configuration{
-    modi: "run,drun,ssh";
+    modi: "run,drun,ssh,combi";
     lines: 5;
     font: "Hack Nerd Font 14";
     show-icons: true;
