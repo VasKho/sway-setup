@@ -13,7 +13,7 @@ WALLPAPERS_INSTALL_DIR := $(HOME)/.config/wallpapers
 
 include ${CONFIG}
 
-all: prepare install clean
+all: prepare install
 
 prepare: ./waybar
 	mkdir -p $(BUILD_DIR)/sway && cp -r $(SWAY_CONFIG_SRC) $(BUILD_DIR)/sway
