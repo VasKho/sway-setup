@@ -1,0 +1,6 @@
+[submodule "waybar"]
+	path = waybar
+	url = git@github.com:VasKho/waybar-config
+[submodule "rofi"]
+	path = rofi
+	url = git@github.com:VasKho/rofi-dotfiles
