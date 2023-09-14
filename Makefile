@@ -35,7 +35,7 @@ prepare: ./waybar
 
 install:
 	@if [ -d $(SWAY_INSTALL_DIR) ]; then echo "$(SWAY_INSTALL_DIR) already exists"; exit 1; fi
-	mkdir -p $(SWAY_INSTALL_DIR) && cp -r $(BUILD_DIR)/sway $(SWAY_INSTALL_DIR)
+	mkdir -p $(SWAY_INSTALL_DIR) && cp -r $(BUILD_DIR)/sway/* $(SWAY_INSTALL_DIR)
 
 	cd waybar && $(MAKE) -f $(MAKEFILE_DIR)waybar/Makefile all
 
