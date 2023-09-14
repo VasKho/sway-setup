@@ -1,0 +1,43 @@
+include $HOME/.config/sway/themes/THEME/theme.conf
+include $HOME/.config/sway/definitions.d/*.conf
+include $HOME/.config/sway/config.d/*.conf
+include $HOME/.config/sway/config.d/modes/*.conf
+
+# xwayland disable
+
+default_border pixel 1
+
+#don't show gaps if there's only one window on the desktop
+smart_gaps off
+
+floating_modifier $mod normal
+
+bar {
+    id default
+    swaybar_command $HOME/.config/sway/scripts/waybar.sh
+    position top
+}
+
+output * bg $background fill
+
+input * {
+      xkb_layout us,ru
+      xkb_options grp:caps_toggle,grp_led:caps
+      xkb_capslock disable
+      dwt enabled
+      tap enabled
+      natural_scroll enabled
+}
+
+bindgesture swipe:3:left workspace next
+bindgesture swipe:3:right workspace prev
+
+
+for_window [app_id="nm-connection-editor"] floating enable, resize set width 50 ppt height 50 ppt
+for_window [app_id="^Firefox — Sharing Indicator$"] floating enable
+for_window [app_id="^(Save As)|(Open File)$"] floating enable, resize set width 50 ppt height 50 ppt
+for_window [app_id="blueberry"] floating enable, resize set width 50 ppt height 50 ppt
+for_window [app_id="pulsemixer"] floating enable, resize set width 50 ppt height 50 ppt
+for_window [app_id="nmtui"] floating enable, resize set width 50 ppt height 90 ppt
+for_window [app_id="btop"] floating enable, border pixel 2, resize set width 80 ppt height 90 ppt
+for_window [app_id="telegram"] floating enable, sticky enable, move position 73 ppt -3 ppt, resize set width 20 ppt height 110 ppt
