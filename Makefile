@@ -50,6 +50,7 @@ install:
 
 check:
 	for exec in $(EXECUTABLES); do which $$exec > /dev/null 2>/dev/null && printf $(ROW) "$$exec" "Found" || printf $(ROW) "$$exec" "Not found"; done
+	cd waybar && $(MAKE) -s -f $(MAKEFILE_DIR)waybar/Makefile check
 
 clean:
 	rm -rf $(BUILD_DIR) $(SWAY_INSTALL_DIR) $(ROFI_INSTALL_DIR) $(SWORKSTYLE_INSTALL_DIR)
