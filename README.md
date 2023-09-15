@@ -35,9 +35,9 @@ Before starting an installation check whether you do have all necessary dependen
 Before running `make` you must remove abovementioned directories by yourself or with help of `make clean`.
 
 ```sh
-	git clone https://github.com/VasKho/sway-setup
-	git submodule update --init --recursive
-	make
+git clone https://github.com/VasKho/sway-setup
+git submodule update --init --recursive
+make
 ```
 
 
