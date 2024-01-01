@@ -1,6 +1,6 @@
 MAKEFILE_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 CONFIG = $(MAKEFILE_DIR)make.conf
-EXECUTABLES := systemctl loginctl wpctl brightnessctl playerctl rofi wl-paste wl-copy autotiling sworkstyle alacritty slurp grim wf-recorder cliphist swaylock mako waybar swaybg jq
+EXECUTABLES := systemctl loginctl wpctl brightnessctl playerctl rofi wl-paste wl-copy autotiling sworkstyle foot slurp grim wf-recorder cliphist swaylock mako waybar swaybg jq wl-mirror nm-connection-editor blueberry nmtui btop telegram-desktop pipectl
 BUILD_DIR = $(MAKEFILE_DIR)build
 SWAY_CONFIG_SRC := $(MAKEFILE_DIR)config.d $(MAKEFILE_DIR)definitions.d $(MAKEFILE_DIR)scripts $(MAKEFILE_DIR)themes $(MAKEFILE_DIR)config
 ROFI_CONFIG_SRC := $(shell find $(MAKEFILE_DIR)rofi -name "*.rasi")

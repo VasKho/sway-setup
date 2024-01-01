@@ -40,6 +40,40 @@ git submodule update --init --recursive
 make
 ```
 
+### &nbsp;&nbsp;Requrements
+
+To get this setup work you need to install some packages. Their list might be found either in `make check` output or in the table below.
+If the package is marked with `*` then you can easily replace it in `make.conf`
+Packages marked with `**` are optional, but config contains parts that depend on them.
+
+| Package                  | Description                                                                            |
+|--------------------------|----------------------------------------------------------------------------------------|
+| `systemd`*               | This config config relies on `systemd` commands to login, suspend, reboot and poweroff |
+| `wireplumber`*           | Client for pipewire audio                                                              |
+| `brightnessctl`*         | Simple screen brightness manager                                                       |
+| `playerctl`*             | Media player controller                                                                |
+| `rofi`                   | Provides widgets for modes and menus                                                   |
+| `wl-clipboard`           | CLI clipboard utility                                                                  |
+| `autotiling`             | Helps to manage tiling layouts                                                         |
+| `sworkstyle`             | Used for beautiful workspace names in waybar                                           |
+| `foot`                   | Terminal                                                                               |
+| `slurp`                  | Utility to select on screen with cursor (used in screenshots and recordings)           |
+| `grim`                   | Screenshot tool                                                                        |
+| `wf-recorder`            | Screen recorder                                                                        |
+| `cliphist`               | Wayland clipboard manager                                                              |
+| `swaylock`               | Screen lock utility (I prefer `swaylock-effects`)                                      |
+| `mako`                   | Notification daemon                                                                    |
+| `waybar`                 | Highly customizable Wayland bar for Sway and Wlroots based compositors                 |
+| `swaybg`                 | Wallpaper tool                                                                         |
+| `jq`                     | CLI JSON processor                                                                     |
+| `wl-mirror`              | Tool to mirror screen                                                                  |
+| `pipectl`                | Dependency of `wl-mirror`                                                              |
+| `nm-connection-editor`** | GUI app to manage network connections configurations                                   |
+| `blueberry`**            | GUI bluetooth connections manager                                                      |
+| `networkmanager`**       | `nmtui` is used in config                                                              |
+| `btop`**                 | More convenient than `htop`                                                            |
+| `telegram-desktop`**     | Messenger                                                                              |
+
 
 ## &nbsp;&nbsp;Configuration
 
@@ -49,7 +83,6 @@ This repo contains `make.conf` file which is used to configure some variables du
 
 | Shortcut                | Function                                 |
 |:-----------------------:|:----------------------------------------:|
-| `Super+<arrows>`        | Move focus among windows                 |
 | `Super+Shift+c`         | Reload config                            |
 | `Super+Enter`           | Run terminal                             |
 | `Super+Shift+q`         | Kill active window                       |
@@ -74,5 +107,6 @@ This repo contains `make.conf` file which is used to configure some variables du
 | `XF86AudioPlay`         | Toggle audio playing                     |
 | `XF86AudioNext`         | Next song                                |
 | `XF86AudioPrev`         | Previous song                            |
+| `Super+Shift+m`         | Start screen mirroring                   |
 
-This table isn't contain powermenu and screenshot shortcuts because you can find them in their menus.
+This table doesn't contain powermenu and screenshot shortcuts because you can find them in their menus.
