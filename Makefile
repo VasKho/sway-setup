@@ -15,7 +15,7 @@ include ${CONFIG}
 
 all: prepare install
 
-prepare: ./waybar
+prepare:
 	mkdir -p $(BUILD_DIR)/sway && cp -r $(SWAY_CONFIG_SRC) $(BUILD_DIR)/sway
 	sed -i 's/IMPORT_DISPLAY_VARIABLES/$(IMPORT_DISPLAY_VARIABLES)/gm' $(BUILD_DIR)/sway/config.d/autostart.conf
 	sed -i 's/SUSPEND/$(SUSPEND)/gm' $(BUILD_DIR)/sway/config.d/modes/shutdown.conf
@@ -37,7 +37,7 @@ install:
 	@if [ -d $(SWAY_INSTALL_DIR) ]; then echo "$(SWAY_INSTALL_DIR) already exists"; exit 1; fi
 	mkdir -p $(SWAY_INSTALL_DIR) && cp -r $(BUILD_DIR)/sway/* $(SWAY_INSTALL_DIR)
 
-	cd waybar && $(MAKE) -f $(MAKEFILE_DIR)waybar/Makefile all
+	cd eww && $(MAKE) -f $(MAKEFILE_DIR)eww/Makefile all
 
 	@if [ -d $(ROFI_INSTALL_DIR) ]; then echo "$(ROFI_INSTALL_DIR) already exists"; exit 1; fi
 	mkdir -p $(ROFI_INSTALL_DIR) && cp -r $(ROFI_CONFIG_SRC) $(ROFI_INSTALL_DIR)
@@ -50,11 +50,11 @@ install:
 
 check:
 	for exec in $(EXECUTABLES); do which $$exec > /dev/null 2>/dev/null && printf $(ROW) "$$exec" "Found" || printf $(ROW) "$$exec" "Not found"; done
-	cd waybar && $(MAKE) -s -f $(MAKEFILE_DIR)waybar/Makefile check
+	cd eww && $(MAKE) -s -f $(MAKEFILE_DIR)eww/Makefile check
 
 clean:
 	rm -rf $(BUILD_DIR) $(SWAY_INSTALL_DIR) $(ROFI_INSTALL_DIR) $(SWORKSTYLE_INSTALL_DIR)
-	cd waybar && $(MAKE) -f $(MAKEFILE_DIR)waybar/Makefile clean
+	cd eww && $(MAKE) -f $(MAKEFILE_DIR)eww/Makefile clean
 
 
 .PHONY: check

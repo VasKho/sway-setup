@@ -12,22 +12,22 @@ smart_gaps off
 gaps inner 3
 gaps outer 3
 
-# uncomment corners, blur and shadow lines if you use swayfx instead of sway
-#corner_radius 10
 
-#blur enable
-#blur_passes 1
-#blur_radius 1
+corner_radius 10
 
-#shadows enable
-#shadow_blur_radius 8
-#shadow_color "$color0"ff ex
+blur enable
+blur_passes 1
+blur_radius 1
+
+shadows enable
+shadow_blur_radius 8
+shadow_color "$color0"ff ex
 
 floating_modifier $mod normal
 
 bar {
     id default
-    swaybar_command $HOME/.config/sway/scripts/waybar.sh
+    # swaybar_command $HOME/.config/sway/scripts/waybar.sh
     position top
 }
 
