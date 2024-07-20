@@ -17,21 +17,21 @@ all: prepare install
 
 prepare:
 	mkdir -p $(BUILD_DIR)/sway && cp -r $(SWAY_CONFIG_SRC) $(BUILD_DIR)/sway
-	sed -i 's/IMPORT_DISPLAY_VARIABLES/$(IMPORT_DISPLAY_VARIABLES)/gm' $(BUILD_DIR)/sway/config.d/autostart.conf
-	sed -i 's/SUSPEND/$(SUSPEND)/gm' $(BUILD_DIR)/sway/config.d/modes/shutdown.conf
-	sed -i 's/POWEROFF/$(POWEROFF)/gm' $(BUILD_DIR)/sway/config.d/modes/shutdown.conf
-	sed -i 's/REBOOT/$(REBOOT)/gm' $(BUILD_DIR)/sway/config.d/modes/shutdown.conf
-	sed -i 's/EXIT_SESSION_COMMAND/$(EXIT_SESSION_COMMAND)/gm' $(BUILD_DIR)/sway/config.d/modes/shutdown.conf
-	sed -i 's/AUDIO_MUTE/$(AUDIO_MUTE)/gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
-	sed -i 's/MIC_MUTE/$(MIC_MUTE)/gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
-	sed -i 's/RAISE_VOLUME/$(RAISE_VOLUME)/gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
-	sed -i 's/LOWER_VOLUME/$(LOWER_VOLUME)/gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
-	sed -i 's/BRIGHTNESS_UP/$(BRIGHTNESS_UP)/gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
-	sed -i 's/BRIGHTNESS_DOWN/$(BRIGHTNESS_DOWN)/gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
-	sed -i 's/AUDIO_PLAY/$(AUDIO_PLAY)/gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
-	sed -i 's/AUDIO_NEXT/$(AUDIO_NEXT)/gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
-	sed -i 's/AUDIO_PREV/$(AUDIO_PREV)/gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
-	sed -i 's/THEME/$(THEME)/gm' $(BUILD_DIR)/sway/config
+	sed -i 's|IMPORT_DISPLAY_VARIABLES|$(IMPORT_DISPLAY_VARIABLES)|gm' $(BUILD_DIR)/sway/config.d/autostart.conf
+	sed -i 's|SUSPEND|$(SUSPEND)|gm' $(BUILD_DIR)/sway/config.d/modes/shutdown.conf
+	sed -i 's|POWEROFF|$(POWEROFF)|gm' $(BUILD_DIR)/sway/config.d/modes/shutdown.conf
+	sed -i 's|REBOOT|$(REBOOT)|gm' $(BUILD_DIR)/sway/config.d/modes/shutdown.conf
+	sed -i 's|EXIT_SESSION_COMMAND|$(EXIT_SESSION_COMMAND)|gm' $(BUILD_DIR)/sway/config.d/modes/shutdown.conf
+	sed -i 's|AUDIO_MUTE|$(AUDIO_MUTE)|gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
+	sed -i 's|MIC_MUTE|$(MIC_MUTE)|gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
+	sed -i 's|RAISE_VOLUME|$(RAISE_VOLUME)|gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
+	sed -i 's|LOWER_VOLUME|$(LOWER_VOLUME)|gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
+	sed -i 's|BRIGHTNESS_UP|$(BRIGHTNESS_UP)|gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
+	sed -i 's|BRIGHTNESS_DOWN|$(BRIGHTNESS_DOWN)|gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
+	sed -i 's|AUDIO_PLAY|$(AUDIO_PLAY)|gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
+	sed -i 's|AUDIO_NEXT|$(AUDIO_NEXT)|gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
+	sed -i 's|AUDIO_PREV|$(AUDIO_PREV)|gm' $(BUILD_DIR)/sway/config.d/shortcuts.conf
+	sed -i 's|THEME|$(THEME)|gm' $(BUILD_DIR)/sway/config
 
 install:
 	@if [ -d $(SWAY_INSTALL_DIR) ]; then echo "$(SWAY_INSTALL_DIR) already exists"; exit 1; fi
